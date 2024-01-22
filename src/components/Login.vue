@@ -74,7 +74,7 @@ const signInWithGoogle = async () => {
 
 .side{
   width: 100vw;
-  background-image: url("sideimage.jpg");
+  background-image: url("/sideimage.jpg");
   background-size: cover; /* Adjust as needed */
 }
 
