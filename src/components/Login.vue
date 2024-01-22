@@ -63,7 +63,7 @@ const signInWithGoogle = async () => {
 }
 
 .bg {
-  background-image: url("backgroundYellow.jpg");
+  background-image: url("/backgroundYellow.jpg");
   background-size: cover; /* Adjust as needed */
   height: 100vh;
 }
