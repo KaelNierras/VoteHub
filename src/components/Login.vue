@@ -40,6 +40,7 @@ const signInWithGoogle = async () => {
 <style scoped>
 
 .google{
+  margin-top: 100px;
   color: white; 
   border: 2px solid white; 
   padding: 10px; 
@@ -52,10 +53,11 @@ const signInWithGoogle = async () => {
 }
 .login{
   padding-top: 50px;
+  padding-bottom: 10px;
   display: flex;
   justify-content: space-between;
   background-color: #2B3151;
-  width: 450px;
+  width: 400px;
   height: 550px;
   border-radius: 70px 70px 0px 0px;
 }
@@ -63,6 +65,7 @@ const signInWithGoogle = async () => {
 .bg {
   background-image: url("backgroundYellow.jpg");
   background-size: cover; /* Adjust as needed */
+  height: 100vh;
 }
 
 .main{
@@ -73,6 +76,24 @@ const signInWithGoogle = async () => {
   width: 100vw;
   background-image: url("sideimage.jpg");
   background-size: cover; /* Adjust as needed */
+}
+
+/* Media query for small screens (max-width: 767px) */
+@media screen and (max-width: 767px) {
+
+  .bg{
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .login{
+    width: 100vw;
+  }
+
+  .side{
+    display: none;
+  }
 }
 </style>
 
