@@ -4,15 +4,17 @@
 </script>
 
 <template>
-  <div>
-    <h1 class="display-4">Hello, Bootstrap in Vue!</h1>
 
-    <div class="alert alert-success" role="alert">
-      This is a Bootstrap alert.
+  <div class="container bg-info">
+    <div class="card">
+
     </div>
-
-    <button type="button" class="btn btn-primary">Primary Button</button>
   </div>
+
+  <div class="side">
+
+  </div>
+
 </template>
 
 <style scoped>
