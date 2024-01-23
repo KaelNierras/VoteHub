@@ -54,11 +54,33 @@
     color: white;
     margin-bottom: 0px !important;
 }
+
+/* Media query for small screens (max-width: 767px) */
+@media screen and (max-width: 767px) {
+    .bg-container{
+        width: 80px;
+    }
+
+    .details, .nav-name{
+        display: none !important;
+    }
+    
+    .title{
+        padding-left: 0px !important;
+    }
+
+    .logo-img{
+        display: none !important;
+    }
+}
+
+
+
 </style>
 
 <template>
     <div class="col-auto col-md-3 col-xl-2 " style="background-color: #2B3151;">
-        <div class="d-flex flex-column align-items-center align-items-sm-start p-0 text-white min-vh-100">
+        <div class="bg-container d-flex flex-column align-items-center align-items-sm-start p-0 text-white min-vh-100">
 
             <div class="topSection w-100 mb-4">
                 <a href="/" class="d-flex align-items-center text-white text-decoration-none logo-img w-100">
@@ -69,7 +91,7 @@
                     <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30"
                         class="rounded-circle profile-img">
 
-                    <div class="details d-flex align-items-start flex-column">
+                    <div class="details  d-flex align-items-start flex-column ">
                         <p class="name">
                             Kyle Anthony Nierras
                         </p>
@@ -84,20 +106,20 @@
 
             </div>
 
-            <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start w-100 p-2" id="menu">
+            <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-center w-100 p-2" id="menu">
 
                 <!-- Report Section -->
                 <p class="title">REPORTS</p>
                 <li class="nav-item">
                     <a href="#" class="nav-link align-middle px-0 active">
                         <img src="/dashboard.png" class="icons">
-                        <span class="ms-1 d-none d-sm-inline text-light">Dashboard</span>
+                        <span class="ms-1 nav-name d-sm-inline text-light">Dashboard</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link align-middle px-0">
                         <img src="/manual-voting.png" class="icons">
-                        <span class="ms-1 d-none d-sm-inline text-light">Votes</span>
+                        <span class="ms-1 nav-name d-sm-inline text-light">Votes</span>
                     </a>
                 </li>
 
@@ -110,20 +132,20 @@
                 <li class="nav-item">
                     <a href="#" class="nav-link align-middle px-0">
                         <img src="/people.png" class="icons">
-                        <span class="ms-1 d-none d-sm-inline text-light">Voters</span>
+                        <span class="ms-1 nav-name d-sm-inline text-light">Voters</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link align-middle px-0">
                         <img src="/hierarchy-structure.png" class="icons">
-                        <span class="ms-1 d-none d-sm-inline text-light">Position</span>
+                        <span class="ms-1 nav-name d-sm-inline text-light">Position</span>
                     </a>
                 </li>
 
                 <li class="nav-item">
                     <a href="#" class="nav-link align-middle px-0">
                         <img src="/selected.png" class="icons">
-                        <span class="ms-1 d-none d-sm-inline text-light">Candidate</span>
+                        <span class="ms-1 nav-name d-sm-inline text-light">Candidate</span>
                     </a>
                 </li>
 
