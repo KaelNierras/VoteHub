@@ -10,7 +10,7 @@ const showSidebar = computed(() => route.name !== 'Login');
 <template>
   <div class="main"> 
     <Sidebar v-if="showSidebar" />
-    <div :class="{ 'router': showSidebar }">
+    <div :class="{ 'router': showSidebar }" style="width: 100vw;">
       <RouterView />
     </div>
   </div>

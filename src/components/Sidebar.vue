@@ -1,6 +1,9 @@
 <script setup>
 import { ref, onMounted } from 'vue';
+import { auth } from '@/firebase';
+import { useRouter } from 'vue-router';
 
+const currentUser = ref(auth.currentUser);
 const currentRoute = ref('window.location.pathname');
 
 const setActiveRoute = (route) => {
@@ -11,6 +14,17 @@ onMounted(() => {
   // Update the initial route on component mount
   setActiveRoute(window.location.pathname);
 });
+
+const router = useRouter();
+
+const signOut = async () => {
+  try {
+    await auth.signOut();
+    router.push('/');
+  } catch (error) {
+    console.error('Error signing out:', error.message);
+  }
+};
 </script>
 
 
@@ -96,6 +110,12 @@ onMounted(() => {
   border-radius: 4px;
 }
 
+.footer{
+    height: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
 
 </style>
 
@@ -114,7 +134,7 @@ onMounted(() => {
 
                     <div class="details  d-flex align-items-start flex-column ">
                         <p class="name">
-                            Kyle Anthony Nierras
+                            {{ currentUser?.displayName || currentUser?.email }}
                         </p>
                         <p class="position m-0">
                             VP Marketing
@@ -170,7 +190,14 @@ onMounted(() => {
                     </router-link>  
                 </li>
 
-
+                <div class="footer">
+                    <li class="nav-item">
+                        <router-link to="/" class="nav-link align-middle px-0"  @click="signOut()">
+                            <img src="/logout.png" class="icons">
+                            <span class="ms-1 nav-name d-sm-inline text-light">Logout</span>
+                        </router-link>  
+                    </li>
+                </div>
             </ul>
 
         </div>

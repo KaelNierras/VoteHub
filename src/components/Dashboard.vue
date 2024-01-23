@@ -1,7 +1,8 @@
 <template>
-  <div>
-    <h1>Welcome to the Dashboard, {{ currentUser.displayName || currentUser.email }}!</h1>
-    <p>This is a simple Vue dashboard example.</p>
+  <div class="w-100">
+    <h1>Welcome to <b>VoteHub</b></h1>
+    <hr>
+    <p>Electoral Management System for ease and automation developed by the CS Students.</p>
 
     <button @click="signOut">Sign Out</button>
   </div>
@@ -12,18 +13,6 @@ import { ref } from 'vue';
 import { auth } from '@/firebase';
 import { useRouter } from 'vue-router';
 
-const router = useRouter();
-
-const currentUser = ref(auth.currentUser);
-
-const signOut = async () => {
-  try {
-    await auth.signOut();
-    router.push('/');
-  } catch (error) {
-    console.error('Error signing out:', error.message);
-  }
-};
 </script>
 
 <style scoped>
