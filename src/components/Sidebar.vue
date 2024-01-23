@@ -1,18 +1,64 @@
 <script setup>
 import { ref, onMounted } from 'vue';
-import { auth } from '@/firebase';
 import { useRouter } from 'vue-router';
+import { collection, query, where, getDocs } from 'firebase/firestore';
+import { db, auth } from '@/firebase'; // Adjust the path accordingly
 
 const currentUser = ref(auth.currentUser);
 const currentRoute = ref('window.location.pathname');
+const currentUserID = ref(localStorage.getItem('currentUserID') || (auth.currentUser ? auth.currentUser.uid : null));
+const moderatorRole = ref(null);
 
 const setActiveRoute = (route) => {
   currentRoute.value = route;
 };
 
-onMounted(() => {
+const getModeratorRole = async () => {
+  try {
+    const moderatorCollection = collection(db, 'moderator');
+    const q = query(moderatorCollection, where('id', '==', currentUserID.value));
+
+    const querySnapshot = await getDocs(q);
+
+    if (!querySnapshot.empty) {
+      querySnapshot.forEach((doc) => {
+        moderatorRole.value = doc.data().role;
+      });
+    } else {
+      console.log('No matching document found.');
+    }
+  } catch (error) {
+    console.error('Error getting moderator role:', error);
+  }
+};
+
+onMounted(async () => {
   // Update the initial route on component mount
   setActiveRoute(window.location.pathname);
+
+  // Check if there's a user ID in local storage and update currentUserID
+  const storedUserID = localStorage.getItem('currentUserID');
+  if (storedUserID) {
+    currentUserID.value = storedUserID;
+  }
+
+  // Listen for changes in authentication state
+  const unsubscribe = auth.onAuthStateChanged((user) => {
+    currentUser.value = user;
+
+    // If the user is authenticated, update the currentUserID ref
+    if (user) {
+      currentUserID.value = user.uid;
+      localStorage.setItem('currentUserID', user.uid);
+    }
+
+    getModeratorRole();
+  });
+
+  return () => {
+    // Unsubscribe from onAuthStateChanged to avoid memory leaks
+    unsubscribe();
+  };
 });
 
 const router = useRouter();
@@ -20,12 +66,16 @@ const router = useRouter();
 const signOut = async () => {
   try {
     await auth.signOut();
+    // Clear the stored user ID on sign out
+    localStorage.removeItem('currentUserID');
     router.push('/');
   } catch (error) {
     console.error('Error signing out:', error.message);
   }
 };
 </script>
+
+
 
 
 <style scoped>
@@ -135,7 +185,7 @@ const signOut = async () => {
                 {{ currentUser?.displayName || currentUser?.email }}
               </p>
               <p class="position m-0">
-                Moderator
+               {{ moderatorRole }}
               </p>
             </div>
             <hr>
