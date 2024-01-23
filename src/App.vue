@@ -8,7 +8,7 @@ const showSidebar = computed(() => route.name !== 'Login');
 </script>
 
 <template>
-  <div>
+  <div class="main"> 
     <Sidebar v-if="showSidebar" />
     <div :class="{ 'router': showSidebar }">
       <RouterView />
@@ -17,4 +17,8 @@ const showSidebar = computed(() => route.name !== 'Login');
 </template>
 
 <style scoped>
+.main{
+  display: flex;
+  flex-direction: row;
+}
 </style>
