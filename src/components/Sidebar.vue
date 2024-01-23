@@ -109,7 +109,7 @@ onMounted(() => {
                 </a>
 
                 <div class="profile d-flex flex-row justify-content-start align-items-center mb-2 w-100">
-                    <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30"
+                    <img src="/profile.png" alt="hugenerd" width="30" height="30"
                         class="rounded-circle profile-img">
 
                     <div class="details  d-flex align-items-start flex-column ">
