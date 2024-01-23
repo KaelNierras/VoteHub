@@ -135,7 +135,7 @@ const signOut = async () => {
                 {{ currentUser?.displayName || currentUser?.email }}
               </p>
               <p class="position m-0">
-                VP Marketing
+                Moderator
               </p>
             </div>
             <hr>
