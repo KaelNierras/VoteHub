@@ -82,6 +82,7 @@ onMounted(() => {
     }
     
     .title{
+        display: none !important;
         padding-left: 0px !important;
     }
 
