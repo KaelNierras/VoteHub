@@ -11,7 +11,7 @@
     <hr>
     <p>Electoral Management System for ease and automation developed by the CS Students.</p>
   </div>
-  <p class="title h4 ">Events</p>
+  <p class="title h4">Events</p>
   <div class="cards-container">
     <div v-for="(row, rowIndex) in rows" :key="rowIndex" class="card-row">
       <div v-for="(column, columnIndex) in row" :key="columnIndex" class="card bg-light text-dark">
@@ -20,6 +20,9 @@
         </div>
         <div class="card-body">
           <img :src="column.image" alt="Card Image" class="card-image">
+          <div class="overlay-btn">
+            <button class="btn">View</button>
+          </div>
         </div>
       </div>
     </div>
@@ -47,17 +50,57 @@ const rows = computed(() => {
 </script>
 
 <style scoped>
+.overlay-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  transition: visibility 0s, opacity 0.3s ease, background-color 0.3s ease, border-radius 0.3s ease;
+}
+
+.card:hover .overlay-btn {
+  visibility: visible;
+}
+
+.btn {
+  height: 40px !important;
+  width: 60px !important;
+  line-height: 0px !important;
+  background-color: green;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.card:hover .overlay-btn {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.241);
+  border-radius: 5px;
+  
+}
+
+
+
 .card-body img {
   width: 200px;
   height: 130px;
   object-fit: contain;
 }
+
 .cards-container {
-  height: calc(100vh - 230px); /* Adjust as needed */
+  height: calc(100vh - 230px);
+  /* Adjust as needed */
   overflow-y: auto;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.247);
+
 
 }
 
