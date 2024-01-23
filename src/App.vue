@@ -17,8 +17,4 @@ const showSidebar = computed(() => route.name !== 'Login');
 </template>
 
 <style scoped>
-.router {
-  margin-top: 10px;
-  margin-left: 300px;
-}
 </style>
