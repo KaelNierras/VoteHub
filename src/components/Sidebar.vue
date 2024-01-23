@@ -205,7 +205,7 @@ const signOut = async () => {
           <li class="nav-item">
             <router-link to="/votes" class="nav-link align-middle px-0" :class="{ active: currentRoute === '/votes' }" @click="setActiveRoute('/votes')">
               <img src="/manual-voting.png" class="icons">
-              <span class="ms-1 nav-name d-sm-inline text-light">Votes</span>
+              <span class="ms-1 nav-name d-sm-inline text-light">Event</span>
             </router-link>
           </li>
   

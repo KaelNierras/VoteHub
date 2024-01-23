@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="header d-flex flex-row justify-content-between">
-      <h1>Welcome to <b>VotePage</b></h1>
+      <h1>Welcome to <b>Event Page</b></h1>
       <button class="btn btn-primary" @click="handleButtonClick">
         <span class="material-symbols-outlined">
           add
