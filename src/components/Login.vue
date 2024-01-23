@@ -29,11 +29,10 @@ const signInWithGoogle = async () => {
           <img src="/google icon.png" width="30" height="30">
           Sign In with Google
         </div>
-        <p class="text-light">Electoral Management System. ©CS Cube 2024</p>
+        <p class="text-light" style="font-size: small !important; font-family: Verdana, Geneva, Tahoma, sans-serif;">Electoral Management System. ©CS Cube 2024</p>
       </div>
     </div>
     
-
     <div class="side">
 
     </div>
@@ -42,7 +41,6 @@ const signInWithGoogle = async () => {
 </template>
 
 <style scoped>
-
 .google{
   margin-top: 100px;
   color: white; 
