@@ -16,7 +16,6 @@ onMounted(() => {
 
 <style scoped>
 .title {
-    padding-left: 20px;
     font-size: small;
 }
 
