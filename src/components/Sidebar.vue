@@ -17,7 +17,7 @@ onMounted(() => {
 <style scoped>
 .title {
     padding-left: 20px;
-    font-size: x-small;
+    font-size: small;
 }
 
 .nav-link {
