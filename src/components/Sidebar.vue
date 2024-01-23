@@ -66,7 +66,7 @@ onMounted(() => {
 .profile{
     padding: 10px;
     margin-top: 10px !important;
-    background-color: #E4B608;
+    background-color: #37404e;
     color: white;
     margin-bottom: 0px !important;
 }
