@@ -33,7 +33,7 @@
 import { ref, computed } from 'vue';
 
 const cardList = ref([
-  { header: "CS Cude Election", image: "profile.png" },
+  { header: "CS Cube Election", image: "profile.png" },
   { header: "Robotic Org Election", image: "profile.png" },
   { header: "UCSS Election", image: "profile.png" },
   // Add more cards as needed
@@ -97,7 +97,7 @@ const rows = computed(() => {
   height: calc(100vh - 230px);
   /* Adjust as needed */
   overflow-y: auto;
-  background-color: white;
+  background-color: whitesmoke;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.247);
 
