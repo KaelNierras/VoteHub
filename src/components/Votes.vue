@@ -11,7 +11,7 @@
     <hr>
     <p>Electoral Management System for ease and automation developed by the CS Students.</p>
   </div>
-
+  <p class="title h4 ">Events</p>
   <div class="cards-container">
     <div v-for="(row, rowIndex) in rows" :key="rowIndex" class="card-row">
       <div v-for="(column, columnIndex) in row" :key="columnIndex" class="card bg-light text-dark">
@@ -30,9 +30,9 @@
 import { ref, computed } from 'vue';
 
 const cardList = ref([
-  { header: "Header 1", image: "selected.png" },
-  { header: "Header 2", image: "profile.png" },
-  { header: "Header 3", image: "people.png" },
+  { header: "CS Cude Election", image: "profile.png" },
+  { header: "Robotic Org Election", image: "profile.png" },
+  { header: "UCSS Election", image: "profile.png" },
   // Add more cards as needed
 ]);
 
@@ -47,20 +47,25 @@ const rows = computed(() => {
 </script>
 
 <style scoped>
-
 .card-body img {
-  background-color: aqua;
+  width: 200px;
+  height: 130px;
+  object-fit: contain;
 }
 .cards-container {
-  height: calc(100vh - 200px); /* Adjust as needed */
+  height: calc(100vh - 230px); /* Adjust as needed */
   overflow-y: auto;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.247);
+
 }
 
 .card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: .5px solid grey;
+  border: 2px solid rgba(128, 128, 128, 0.251);
   width: 200px;
   height: 200px;
   margin: 15px;
