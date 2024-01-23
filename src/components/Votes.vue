@@ -68,7 +68,7 @@ const rows = computed(() => {
 }
 
 .btn {
-  height: 40px !important;
+  height: 50px !important;
   width: 60px !important;
   line-height: 0px !important;
   background-color: green;
@@ -80,7 +80,7 @@ const rows = computed(() => {
 
 .card:hover .overlay-btn {
   opacity: 1;
-  background-color: rgba(0, 0, 0, 0.241);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.241), transparent);
   border-radius: 5px;
   
 }
@@ -134,7 +134,7 @@ const rows = computed(() => {
   max-height: 100%;
 }
 
-.btn {
+.overlay-btn .btn {
   height: 50px;
   width: 50px;
   line-height: 0px !important;
