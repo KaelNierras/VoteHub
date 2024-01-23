@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 
-const currentRoute = ref(window.location.pathname);
+const currentRoute = ref('window.location.pathname');
 
 const setActiveRoute = (route) => {
   currentRoute.value = route;
@@ -103,7 +103,7 @@ onMounted(() => {
         <div class="bg-container d-flex flex-column align-items-center align-items-sm-start p-0 text-white min-vh-100">
 
             <div class="topSection w-100 mb-4">
-                <a href="/" class="d-flex align-items-center text-white text-decoration-none logo-img w-100" >
+                <a href="/dashboard" class="d-flex align-items-center text-white text-decoration-none logo-img w-100" >
                     <img src="/logo.png" width="150">
                 </a>
 
@@ -131,7 +131,7 @@ onMounted(() => {
                 <!-- Report Section -->
                 <p class="title">REPORTS</p>
                 <li class="nav-item">
-                    <a href="/" class="nav-link align-middle px-0"  :class="{ active: currentRoute === '/' }" @click="setActiveRoute('/')">
+                    <a href="/dashboard" class="nav-link align-middle px-0"  :class="{ active: currentRoute === '/dashboard' }" @click="setActiveRoute('/dashboard')">
                         <img src="/dashboard.png" class="icons">
                         <span class="ms-1 nav-name d-sm-inline text-light">Dashboard</span>
                     </a>
