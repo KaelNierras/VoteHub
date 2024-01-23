@@ -125,7 +125,7 @@ const signOut = async () => {
   
         <div class="topSection w-100 mb-4">
           <a href="/dashboard" class="d-flex align-items-center text-white text-decoration-none logo-img w-100">
-            <img src="/logo.png" width="150">
+            <img src="/logo.png" width="200">
           </a>
   
           <div class="profile d-flex flex-row justify-content-start align-items-center mb-2 w-100">
@@ -142,7 +142,7 @@ const signOut = async () => {
           </div>
         </div>
   
-        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start w-100 p-2" id="menu">
+        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start w-100 p-2 footer" id="menu">
   
           <!-- Report Section -->
           <p class="title">REPORTS</p>
