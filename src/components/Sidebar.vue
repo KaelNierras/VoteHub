@@ -131,16 +131,16 @@ onMounted(() => {
                 <!-- Report Section -->
                 <p class="title">REPORTS</p>
                 <li class="nav-item">
-                    <a href="/dashboard" class="nav-link align-middle px-0"  :class="{ active: currentRoute === '/dashboard' }" @click="setActiveRoute('/dashboard')">
+                    <router-link to="/dashboard" class="nav-link align-middle px-0" :class="{ active: currentRoute === '/dashboard' }" @click="setActiveRoute('/dashboard')">
                         <img src="/dashboard.png" class="icons">
                         <span class="ms-1 nav-name d-sm-inline text-light">Dashboard</span>
-                    </a>
+                    </router-link>
                 </li>
                 <li class="nav-item">
-                    <a href="/votes" class="nav-link align-middle px-0" :class="{ active: currentRoute === '/votes' }" @click="setActiveRoute('/votes')">
+                    <router-link to="/votes" class="nav-link align-middle px-0" :class="{ active: currentRoute === '/votes' }" @click="setActiveRoute('/votes')">
                         <img src="/manual-voting.png" class="icons">
                         <span class="ms-1 nav-name d-sm-inline text-light">Votes</span>
-                    </a>
+                    </router-link>
                 </li>
 
                 <div class="space">
@@ -150,23 +150,23 @@ onMounted(() => {
                 <!-- Manage Section -->
                 <p class="title mt-4">MANAGE</p>
                 <li class="nav-item">
-                    <a href="#" class="nav-link align-middle px-0" :class="{ active: currentRoute === '#' }" @click="setActiveRoute('#')">
+                    <router-link to="#" class="nav-link align-middle px-0" :class="{ active: currentRoute === '#' }" @click="setActiveRoute('#')">
                         <img src="/people.png" class="icons">
                         <span class="ms-1 nav-name d-sm-inline text-light">Voters</span>
-                    </a>
+                    </router-link>    
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link align-middle px-0" :class="{ active: currentRoute === '#' }" @click="setActiveRoute('#')">
-                        <img src="/hierarchy-structure.png" class="icons" >
+                    <router-link to="#" class="nav-link align-middle px-0" :class="{ active: currentRoute === '#' }" @click="setActiveRoute('#')">
+                        <img src="/hierarchy-structure.png" class="icons">
                         <span class="ms-1 nav-name d-sm-inline text-light">Position</span>
-                    </a>
+                    </router-link>  
                 </li>
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link align-middle px-0" :class="{ active: currentRoute === '#' }" @click="setActiveRoute('#')">
+                    <router-link to="#" class="nav-link align-middle px-0" :class="{ active: currentRoute === '#' }" @click="setActiveRoute('#')">
                         <img src="/selected.png" class="icons">
                         <span class="ms-1 nav-name d-sm-inline text-light">Candidate</span>
-                    </a>
+                    </router-link>  
                 </li>
 
 
