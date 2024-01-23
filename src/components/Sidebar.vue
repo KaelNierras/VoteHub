@@ -76,12 +76,12 @@ const signOut = async () => {
 </script>
 
 
-
-
 <style scoped>
 .title {
     padding-left: 20px;
     font-size:x-small;
+    padding-bottom: 5px;
+    margin-bottom: 0px;
 }
 
 .nav-link {
