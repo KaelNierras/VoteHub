@@ -41,61 +41,64 @@ const signInWithGoogle = async () => {
 </template>
 
 <style scoped>
-.google{
+.google {
   margin-top: 100px;
-  color: white; 
-  border: 2px solid white; 
-  padding: 10px; 
-  border-radius: 20px; 
+  color: white;
+  border: 2px solid white;
+  padding: 10px;
+  border-radius: 20px;
   font-size: small;
 }
 
-.google:hover{
+.google:hover {
   cursor: pointer;
 }
-.login{
+
+.login {
   padding-top: 50px;
   padding-bottom: 10px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column; /* Updated for better responsiveness */
+  align-items: center; /* Center content vertically */
   background-color: #2B3151;
-  width: 400px;
-  height: 550px;
+  width: 100%; /* Updated to full width */
   border-radius: 70px 70px 0px 0px;
+  box-sizing: border-box; /* Include padding and border in the width */
 }
 
 .bg {
   background-image: url("/backgroundYellow.jpg");
-  background-size: cover; /* Adjust as needed */
+  background-size: cover;
   height: 100vh;
 }
 
-.main{
+.main {
   height: 100vh !important;
+  display: flex; /* Updated to flex to allow side and bg to coexist */
 }
 
-.side{
+.side {
   width: 100vw;
   background-image: url("/sideimage.jpg");
-  background-size: cover; /* Adjust as needed */
+  background-size: cover;
 }
 
 /* Media query for small screens (max-width: 767px) */
 @media screen and (max-width: 767px) {
-
-  .bg{
-    justify-content: center;
-    height: 100vh;
-    width: 100vw;
+  .bg {
+    justify-content: center; /* Center content horizontally */
   }
 
-  .login{
-    width: 100vw;
+  .login {
+    width: 100%;
+    padding: 20px; /* Add padding for better spacing on small screens */
+    border-radius: 0; /* Remove border-radius on small screens */
   }
 
-  .side{
+  .side {
     display: none;
   }
 }
 </style>
+
 
