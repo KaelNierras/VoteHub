@@ -1,34 +1,46 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import Login from '../views/LoginView.vue'
-import Dashboard from '../views/DashboardView.vue'
+import { createRouter, createWebHistory } from 'vue-router';
 import { auth } from '@/firebase';
+import Login from '../views/LoginView.vue';
+import Dashboard from '../views/DashboardView.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  mode: history,
+  mode: 'history',
   routes: [
     {
       path: '/',
       name: 'Login',
-      component: Login
+      component: Login,
+      meta: { requiresAuth: false }
     },
     {
       path: '/dashboard',
       name: 'dashboard',
-      component: Dashboard
+      component: Dashboard,
+      meta: { requiresAuth: true }
     }
   ]
-})
-
-router.beforeEach((to, from, next) => {
-  const currentUser = auth.currentUser;
-  const requiresAuth = to.matched.some((record) => record.meta.requiresAuth);
-
-  if (requiresAuth && !currentUser) {
-    next('/');
-  } else {
-    next();
-  }
 });
 
-export default router
+router.beforeEach((to, from, next) => {
+  const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
+
+  // Listen for changes in the authentication state
+  const unsubscribe = auth.onAuthStateChanged((user) => {
+    if (requiresAuth && !user) {
+      // If the route requires authentication and the user is not authenticated, redirect to login
+      next('/');
+    } else if (!requiresAuth && user) {
+      // If the route does not require authentication and the user is authenticated, redirect to dashboard
+      next('/dashboard');
+    } else {
+      // Allow access to the route
+      next();
+    }
+
+    // Stop listening for further changes
+    unsubscribe();
+  });
+});
+
+export default router;

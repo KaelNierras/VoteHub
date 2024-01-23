@@ -1,24 +1,31 @@
 <template>
-    <!-- Sign-out button -->
+  <div>
+    <h1>Welcome to the Dashboard, {{ currentUser.displayName || currentUser.email }}!</h1>
+    <p>This is a simple Vue dashboard example.</p>
+
     <button @click="signOut">Sign Out</button>
+  </div>
 </template>
 
 <script setup>
-import { getAuth, signOut as firebaseSignOut } from 'firebase/auth';
+import { ref } from 'vue';
+import { auth } from '@/firebase';
 import { useRouter } from 'vue-router';
-
-const auth = getAuth();
 
 const router = useRouter();
 
+const currentUser = ref(auth.currentUser);
+
 const signOut = async () => {
   try {
-    await firebaseSignOut(auth);
-    console.log('User signed out successfully');
-    // Optionally, you can navigate to another page after sign-out
+    await auth.signOut();
     router.push('/');
   } catch (error) {
     console.error('Error signing out:', error.message);
   }
 };
 </script>
+
+<style scoped>
+/* Add your styles for the dashboard component here */
+</style>
