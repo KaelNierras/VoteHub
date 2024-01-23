@@ -120,6 +120,7 @@ const rows = computed(() => {
   padding: 10px;
   color: white;
   font-weight: bold;
+  text-align: center;
 }
 
 .card-body {
