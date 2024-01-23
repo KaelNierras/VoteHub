@@ -16,6 +16,7 @@ onMounted(() => {
 
 <style scoped>
 .title {
+    padding-left: 20px;
     font-size: small;
 }
 
@@ -125,7 +126,7 @@ onMounted(() => {
 
             </div>
 
-            <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-center w-100 p-2" id="menu">
+            <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start w-100 p-2" id="menu">
 
                 <!-- Report Section -->
                 <p class="title">REPORTS</p>
