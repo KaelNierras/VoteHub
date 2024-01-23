@@ -24,7 +24,7 @@ const signInWithGoogle = async () => {
     
     <div class="bg d-flex align-items-end">
       <div class="login d-flex flex-column align-items-center ">
-        <img src="/logo with line.png" height='110' width="280">
+        <img src="/logo.png" height='100' >
         <div class="google" @click="signInWithGoogle" style="">
           <img src="/google icon.png" width="30" height="30">
           Sign In with Google
