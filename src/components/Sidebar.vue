@@ -1,3 +1,19 @@
+<script setup>
+import { ref, onMounted } from 'vue';
+
+const currentRoute = ref(window.location.pathname);
+
+const setActiveRoute = (route) => {
+  currentRoute.value = route;
+};
+
+onMounted(() => {
+  // Update the initial route on component mount
+  setActiveRoute(window.location.pathname);
+});
+</script>
+
+
 <style scoped>
 .title {
     padding-left: 20px;
@@ -74,6 +90,10 @@
     }
 }
 
+.nav-link.active {
+  background-color: #37404e; /* Change the background color as needed */
+  border-radius: 4px;
+}
 
 
 </style>
@@ -83,7 +103,7 @@
         <div class="bg-container d-flex flex-column align-items-center align-items-sm-start p-0 text-white min-vh-100">
 
             <div class="topSection w-100 mb-4">
-                <a href="/" class="d-flex align-items-center text-white text-decoration-none logo-img w-100">
+                <a href="/" class="d-flex align-items-center text-white text-decoration-none logo-img w-100" >
                     <img src="/logo.png" width="150">
                 </a>
 
@@ -111,13 +131,13 @@
                 <!-- Report Section -->
                 <p class="title">REPORTS</p>
                 <li class="nav-item">
-                    <a href="#" class="nav-link align-middle px-0 active">
+                    <a href="/" class="nav-link align-middle px-0"  :class="{ active: currentRoute === '/' }" @click="setActiveRoute('/')">
                         <img src="/dashboard.png" class="icons">
                         <span class="ms-1 nav-name d-sm-inline text-light">Dashboard</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link align-middle px-0">
+                    <a href="/votes" class="nav-link align-middle px-0" :class="{ active: currentRoute === '/votes' }" @click="setActiveRoute('/votes')">
                         <img src="/manual-voting.png" class="icons">
                         <span class="ms-1 nav-name d-sm-inline text-light">Votes</span>
                     </a>
@@ -130,20 +150,20 @@
                 <!-- Manage Section -->
                 <p class="title mt-4">MANAGE</p>
                 <li class="nav-item">
-                    <a href="#" class="nav-link align-middle px-0">
+                    <a href="#" class="nav-link align-middle px-0" :class="{ active: currentRoute === '#' }" @click="setActiveRoute('#')">
                         <img src="/people.png" class="icons">
                         <span class="ms-1 nav-name d-sm-inline text-light">Voters</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link align-middle px-0">
-                        <img src="/hierarchy-structure.png" class="icons">
+                    <a href="#" class="nav-link align-middle px-0" :class="{ active: currentRoute === '#' }" @click="setActiveRoute('#')">
+                        <img src="/hierarchy-structure.png" class="icons" >
                         <span class="ms-1 nav-name d-sm-inline text-light">Position</span>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link align-middle px-0">
+                    <a href="#" class="nav-link align-middle px-0" :class="{ active: currentRoute === '#' }" @click="setActiveRoute('#')">
                         <img src="/selected.png" class="icons">
                         <span class="ms-1 nav-name d-sm-inline text-light">Candidate</span>
                     </a>
