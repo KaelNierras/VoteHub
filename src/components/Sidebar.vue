@@ -11,6 +11,7 @@
     width: 100% !important;
     padding-left: 20px !important;
     border-radius: 4px;
+    border: 0px solid white !important;
 }
 
 .icons {
@@ -25,12 +26,11 @@
 .profile-img {
     width: 50px;
     height: 50px;
-    margin-bottom: 10px;
     margin-right: 10px;
 }
 
 .name {
-    font-size: smaller;
+    font-size:small;
     margin-bottom: 0px;
 }
 
@@ -39,14 +39,20 @@
 }
 
 .logo-img {
-    justify-content: center !important;
-    padding-top: 20px;
-    padding-bottom: 20px;
-
+    justify-content: start !important;
+    padding-top: 10px;
 }
 
 .topSection {
     background-color: #1f2337;
+}
+
+.profile{
+    padding: 10px;
+    margin-top: 10px !important;
+    background-color: #E4B608;
+    color: white;
+    margin-bottom: 0px !important;
 }
 </style>
 
@@ -54,12 +60,12 @@
     <div class="col-auto col-md-3 col-xl-2 " style="background-color: #2B3151;">
         <div class="d-flex flex-column align-items-center align-items-sm-start p-0 text-white min-vh-100">
 
-            <div class="topSection w-100 mb-4 p-2">
+            <div class="topSection w-100 mb-4">
                 <a href="/" class="d-flex align-items-center text-white text-decoration-none logo-img w-100">
                     <img src="/logo.png" width="150">
                 </a>
 
-                <div class="profile d-flex flex-row justify-content-center align-items-center mb-4 w-100">
+                <div class="profile d-flex flex-row justify-content-start align-items-center mb-2 w-100">
                     <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30"
                         class="rounded-circle profile-img">
 
