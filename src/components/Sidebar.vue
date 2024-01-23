@@ -31,7 +31,7 @@ const signOut = async () => {
 <style scoped>
 .title {
     padding-left: 20px;
-    font-size: small;
+    font-size:x-small;
 }
 
 .nav-link {
@@ -120,86 +120,78 @@ const signOut = async () => {
 </style>
 
 <template>
-    <div class="col-auto col-md-3 col-xl-2 " style="background-color: #2B3151;">
-        <div class="bg-container d-flex flex-column align-items-center align-items-sm-start p-0 text-white min-vh-100">
-
-            <div class="topSection w-100 mb-4">
-                <a href="/dashboard" class="d-flex align-items-center text-white text-decoration-none logo-img w-100" >
-                    <img src="/logo.png" width="150">
-                </a>
-
-                <div class="profile d-flex flex-row justify-content-start align-items-center mb-2 w-100">
-                    <img src="/profile.png" alt="hugenerd" width="30" height="30"
-                        class="rounded-circle profile-img">
-
-                    <div class="details  d-flex align-items-start flex-column ">
-                        <p class="name">
-                            {{ currentUser?.displayName || currentUser?.email }}
-                        </p>
-                        <p class="position m-0">
-                            VP Marketing
-                        </p>
-                    </div>
-
-                    <hr>
-
-                </div>
-
+    <div class="col-auto col-md-3 col-xl-2" style="background-color: #2B3151;">
+      <div class="bg-container d-flex flex-column align-items-center align-items-sm-start p-0 text-white min-vh-100">
+  
+        <div class="topSection w-100 mb-4">
+          <a href="/dashboard" class="d-flex align-items-center text-white text-decoration-none logo-img w-100">
+            <img src="/logo.png" width="150">
+          </a>
+  
+          <div class="profile d-flex flex-row justify-content-start align-items-center mb-2 w-100">
+            <img src="/profile.png" alt="hugenerd" width="30" height="30" class="rounded-circle profile-img">
+            <div class="details d-flex align-items-start flex-column">
+              <p class="name">
+                {{ currentUser?.displayName || currentUser?.email }}
+              </p>
+              <p class="position m-0">
+                VP Marketing
+              </p>
             </div>
-
-            <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start w-100 p-2" id="menu">
-
-                <!-- Report Section -->
-                <p class="title">REPORTS</p>
-                <li class="nav-item">
-                    <router-link to="/dashboard" class="nav-link align-middle px-0" :class="{ active: currentRoute === '/dashboard' }" @click="setActiveRoute('/dashboard')">
-                        <img src="/dashboard.png" class="icons">
-                        <span class="ms-1 nav-name d-sm-inline text-light">Dashboard</span>
-                    </router-link>
-                </li>
-                <li class="nav-item">
-                    <router-link to="/votes" class="nav-link align-middle px-0" :class="{ active: currentRoute === '/votes' }" @click="setActiveRoute('/votes')">
-                        <img src="/manual-voting.png" class="icons">
-                        <span class="ms-1 nav-name d-sm-inline text-light">Votes</span>
-                    </router-link>
-                </li>
-
-                <div class="space">
-
-                </div>
-
-                <!-- Manage Section -->
-                <p class="title mt-4">MANAGE</p>
-                <li class="nav-item">
-                    <router-link to="#" class="nav-link align-middle px-0" :class="{ active: currentRoute === '#' }" @click="setActiveRoute('#')">
-                        <img src="/people.png" class="icons">
-                        <span class="ms-1 nav-name d-sm-inline text-light">Voters</span>
-                    </router-link>    
-                </li>
-                <li class="nav-item">
-                    <router-link to="#" class="nav-link align-middle px-0" :class="{ active: currentRoute === '#' }" @click="setActiveRoute('#')">
-                        <img src="/hierarchy-structure.png" class="icons">
-                        <span class="ms-1 nav-name d-sm-inline text-light">Position</span>
-                    </router-link>  
-                </li>
-
-                <li class="nav-item">
-                    <router-link to="#" class="nav-link align-middle px-0" :class="{ active: currentRoute === '#' }" @click="setActiveRoute('#')">
-                        <img src="/selected.png" class="icons">
-                        <span class="ms-1 nav-name d-sm-inline text-light">Candidate</span>
-                    </router-link>  
-                </li>
-
-                <div class="footer">
-                    <li class="nav-item">
-                        <router-link to="/" class="nav-link align-middle px-0"  @click="signOut()">
-                            <img src="/logout.png" class="icons">
-                            <span class="ms-1 nav-name d-sm-inline text-light">Logout</span>
-                        </router-link>  
-                    </li>
-                </div>
-            </ul>
-
+            <hr>
+          </div>
         </div>
+  
+        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start w-100 p-2" id="menu">
+  
+          <!-- Report Section -->
+          <p class="title">REPORTS</p>
+          <li class="nav-item">
+            <router-link to="/dashboard" class="nav-link align-middle px-0" :class="{ active: currentRoute === '/dashboard' }" @click="setActiveRoute('/dashboard')">
+              <img src="/dashboard.png" class="icons">
+              <span class="ms-1 nav-name d-sm-inline text-light">Dashboard</span>
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link to="/votes" class="nav-link align-middle px-0" :class="{ active: currentRoute === '/votes' }" @click="setActiveRoute('/votes')">
+              <img src="/manual-voting.png" class="icons">
+              <span class="ms-1 nav-name d-sm-inline text-light">Votes</span>
+            </router-link>
+          </li>
+  
+          <div class="space"></div>
+  
+          <!-- Manage Section -->
+          <p class="title mt-4">MANAGE</p>
+          <li class="nav-item">
+            <router-link to="#" class="nav-link align-middle px-0" :class="{ active: currentRoute === '#' }" @click="setActiveRoute('#')">
+              <img src="/people.png" class="icons">
+              <span class="ms-1 nav-name d-sm-inline text-light">Voters</span>
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link to="#" class="nav-link align-middle px-0" :class="{ active: currentRoute === '#' }" @click="setActiveRoute('#')">
+              <img src="/hierarchy-structure.png" class="icons">
+              <span class="ms-1 nav-name d-sm-inline text-light">Position</span>
+            </router-link>
+          </li>
+  
+          <li class="nav-item">
+            <router-link to="#" class="nav-link align-middle px-0" :class="{ active: currentRoute === '#' }" @click="setActiveRoute('#')">
+              <img src="/selected.png" class="icons">
+              <span class="ms-1 nav-name d-sm-inline text-light">Candidate</span>
+            </router-link>
+          </li>
+  
+          <p class="title mt-4"></p>
+          <li class="nav-item">
+            <router-link to="/" class="nav-link align-middle px-0" @click="signOut()">
+              <img src="/logout.png" class="icons">
+              <span class="ms-1 nav-name d-sm-inline text-light">Logout</span>
+            </router-link>
+          </li>
+        </ul>
+      </div>
     </div>
-</template>
+  </template>
+  

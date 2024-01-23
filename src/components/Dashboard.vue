@@ -4,7 +4,6 @@
     <hr>
     <p>Electoral Management System for ease and automation developed by the CS Students.</p>
 
-    <button @click="signOut">Sign Out</button>
   </div>
 </template>
 
